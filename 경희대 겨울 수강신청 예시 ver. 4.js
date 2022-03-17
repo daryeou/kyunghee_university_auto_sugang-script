@@ -1,11 +1,11 @@
-javascript : (function () {
+javascript: (function () {
 
     var ui_nodelink = document.getElementById("Main").contentDocument.getElementById("coreMain").contentDocument.getElementById("coreMain").contentDocument.getElementsByTagName('head')[0].body;
     var script_nodelink = document.getElementById("Main").contentDocument.getElementById("coreMain").contentDocument.getElementById("coreMain").contentDocument.getElementsByTagName('head')[0];
-    let codeList=['GEC0103-G00','GEC1102-G17','GEC1105-G34','GED1419-G01'];/*과목코드 여따 적어*/
-    let p_major="A05368";/*전공 코드*/
-    let p_year="2020";/*년도*/
-    let p_term="20";/*1학기면 10 2학기면 20, 계절학기는 +5씩*/
+    let codeList = ['GEC0103-G00', 'GEC1102-G17', 'GEC1105-G34', 'GED1419-G01'];/*과목코드를 여기에 적어주세요*/
+    let p_major = "A05368";/*전공 코드*/
+    let p_year = "2020";/*년도*/
+    let p_term = "20";/*1학기면 10 2학기면 20, 여름계절학기는 15, 겨울계절학기는 20*/
     var script_node = document.createElement('script');
     var script_text = document.createTextNode(` 
     /*이 소스코드 아래부터 수정해주세요*/
@@ -87,7 +87,7 @@ javascript : (function () {
     script_nodelink.appendChild(script_node);
 
     try {
-        for (i = 0; i < 8; i ++) {
+        for (i = 0; i < 8; i++) {
             let nodetype = document.createElement('input');
             nodetype.setAttribute("type", "text");
             nodetype.setAttribute("class", "lecture_list");
@@ -99,7 +99,7 @@ javascript : (function () {
         }
     } catch (e) {
         try {
-            for (i = 0; i < 8; i ++) {
+            for (i = 0; i < 8; i++) {
                 let nodetype = document.createElement('input');
                 nodetype.setAttribute("type", "text");
                 nodetype.setAttribute("class", "lecture_list");
@@ -111,7 +111,7 @@ javascript : (function () {
             }
         } catch (e) {
             ui_nodelink = document.getElementById("Main").contentDocument.getElementById("coreMain").contentDocument.getElementById("coreMain").contentDocument.getElementsByClassName("nav")[0].getElementsByClassName('wrap-menu')[0].getElementsByTagName("ul")[0];
-            for (i = 0; i < 8; i ++) {
+            for (i = 0; i < 8; i++) {
                 let nodetype = document.createElement('input');
                 nodetype.setAttribute("type", "text");
                 nodetype.setAttribute("class", "lecture_list");
@@ -124,8 +124,8 @@ javascript : (function () {
         }
     } finally {
         alert("\t<2020학년도 2학기 경희대학교 수강신청>\※사용법\n좌측하단 코드입력에 과목코드를 미리 입력해놓습니다. 수강신청을 원하면 시작버튼을 눌러주세요. \n 수강신청기간이 아니면 동작하지 않습니다. \n\n※주의사항(반드시 전부 읽을것)\n-수강코드에 띄어쓰기가 섞이면 에러가 발생합니다.\n-0번부터 차례대로 입력합니다.\n-빨간색으로 칠해지는 과목코드는 신청에 실패한것이니 확인해주세요.\n\n\n #beta_version_1.0");
-        Array.from(codeList).forEach(function(value,index){
-            ui_nodelink.getElementsByClassName('lecture_list')[index].value=value;
+        Array.from(codeList).forEach(function (value, index) {
+            ui_nodelink.getElementsByClassName('lecture_list')[index].value = value;
         })
     }
     let bt_start = document.createElement('button');
